@@ -7,37 +7,38 @@
 
 <form asp-controller="Project" asp-action="CreateProject" method="post" id="customForm_TableEdit" class="row g-4 ms-3w mt-5 ps-3 pe-3 pb-4" style="background-color: white; width: 65vh;left: 0; right: 0; margin: auto;">
 
-	<div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
-		<div class="card-body">
-			<div class="mb-0" style="font-weight: bolder;">
-				<h2 class="card-title">Creating New Project</h2>
-			</div>
-			<p class="mb-0">
-				@Html.ActionLink("Back to List", "MyProjects", "Project", null, new { @class = "text-white" })
-			</p>
-		</div>
-	</div>
-	<div class="col-md-12">
-		<label for="Title" class="form-label">Title</label>
-		@Html.EditorFor(r => r.Title, new { htmlAttributes = new { @class = "form-control" } })
+    <div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
+        <div class="card-body">
+            <div class="mb-0" style="font-weight: bolder;">
+                <h2 class="card-title">Creating New Project</h2>
+            </div>
+            <p class="mb-0">
+                @Html.ActionLink("Back to List", "MyProjects", "Project", null, new { @class = "text-white" })
+            </p>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <label for="Title" class="form-label">Title</label>
+        @Html.EditorFor(r => r.Title, new { htmlAttributes = new { @class = "form-control" } })
 
-	</div>
-	<div class="col-md-12">
+    </div>
+    <div class="col-md-12">
 
-		<label for="Description" class="form-label">Description</label>
-		@Html.EditorFor(r => r.Description, new { htmlAttributes = new { @class = "form-control" } })
+        <label for="Description" class="form-label">Description</label>
+        @Html.EditorFor(r => r.Description, new { htmlAttributes = new { @class = "form-control" } })
 
-	</div>
-	<div class="col-md-12">
-		<label for="DeveloperId" class="form-label">Project Manager</label>
-		@Html.DropDownListFor(model => model.ProjectManagerId,
-		(IEnumerable<SelectListItem>)ViewBag.ProjectManagers,
-		"Select User",
-		new { @class = "form-control" })
-	</div>
-	
+    </div>
+    <div class="col-md-12">
+        <label for="DeveloperId" class="form-label">Project Manager</label>
+        @Html.DropDownListFor(model => model.ProjectManagerId,
+        (IEnumerable<SelectListItem>)ViewBag.ProjectManagers,
+        "Select User",
+        new { @class = "form-control" })
+    </div>
 
-	<div class="col-md-12 d-flex justify-content-end">
-		<button type="submit" class="btn btn-primary">Add Ticket</button>
-	</div>
+    @if(!User.IsInRole("Demo_Admin")){
+    <div class="col-md-12 d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Add Ticket</button>
+    </div>
+	}
 </form>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WVyP9uScbsRz3hhwN+A5lGAq4DJB+eHwsPOnCMfNvw9JtJePZc9634UmqKFUSeNgCqHuJV0Fwo9o1qTEwqg7jQ==",
+  "dgSpecHash": "7XhNaYoqLl/rAo98A0yvb4m2APzkjIi6wIp6XXsFPS2WWD2YcYU5zgt15jirdSeg1fhSOHiLNGAlBfCzYS0KNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTrackerMVC\\BugTrackerMVC.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTrackerMVC\\BugTrackerMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

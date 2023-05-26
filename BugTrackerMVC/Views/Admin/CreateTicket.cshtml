@@ -5,68 +5,69 @@
 
 
 <form asp-controller="Ticket" asp-action="CreateTicket" method="post" id="customForm_TableEdit" class="row g-4 ms-5 mt-5 ps-3 pe-3 pb-4" style="background-color: white; width: 95vh;">
-	
-	<div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
-		<div class="card-body">
-			<div class="mb-0" style="font-weight: bolder;">
-				<h2 class="card-title">Creating New Ticket</h2>
-			</div>
-			<p class="mb-0">
-				@Html.ActionLink("Back to List", "MyTickets", "Ticket", null, new { @class = "text-white" })
-			</p>
-		</div>
-	</div>
-	<div class="col-md-6">
-		<label for="Title" class="form-label">Title</label>
-		@Html.EditorFor(r => r.Title, new { htmlAttributes = new { @class = "form-control" } })
 
-	</div>
-	<div class="col-md-6">
+    <div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
+        <div class="card-body">
+            <div class="mb-0" style="font-weight: bolder;">
+                <h2 class="card-title">Creating New Ticket</h2>
+            </div>
+            <p class="mb-0">
+                @Html.ActionLink("Back to List", "MyTickets", "Ticket", null, new { @class = "text-white" })
+            </p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="Title" class="form-label">Title</label>
+        @Html.EditorFor(r => r.Title, new { htmlAttributes = new { @class = "form-control" } })
 
-		<label for="Description" class="form-label">Description</label>
-		@Html.EditorFor(r => r.Description, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="col-md-6">
 
-	</div>
-	<div class="col-md-6">
-		<label for="DeveloperId" class="form-label">Developer</label>
-		@Html.DropDownListFor(model => model.DeveloperId,
-		(IEnumerable<SelectListItem>)ViewBag.Dropdown_Developers,
-		"Select Developer",
-		new { @class = "form-control" })
-	</div>
-	<div class="col-md-6">
-		<label for="SubmitterId" class="form-label">Submitter</label>
-		@Html.DropDownListFor(model => model.SubmitterId,
-		(IEnumerable<SelectListItem>)ViewBag.Dropdown_Submitters,
-		"Select Submitter",
-		new { @class = "form-control" })
-	</div>
-	
-	<div class="col-md-6">
-		<label for="Priority" class="form-label">Priority</label>
-		@Html.DropDownListFor(model => model.Priority,
-		(IEnumerable<SelectListItem>)ViewBag.Dropdown_Priority,
-		"Select Priority",
-		new { @class = "form-control" })
-	</div>
-	
-	<div class="col-md-6">
-		<label for="Type" class="form-label">Type</label>
-		@Html.DropDownListFor(model => model.Type,
-		(IEnumerable<SelectListItem>)ViewBag.Dropdown_Type,
-		"Select Type",
-		new { @class = "form-control" })
-	</div>
-	<div class="col-md-6">
-		<label for="ProjectId" class="form-label">Project</label>
-		@Html.DropDownListFor(model => model.ProjectId,
-		(IEnumerable<SelectListItem>)ViewBag.Dropdown_Projects,
-		"Select Project",
-		new { @class = "form-control" })
-	</div>
+        <label for="Description" class="form-label">Description</label>
+        @Html.EditorFor(r => r.Description, new { htmlAttributes = new { @class = "form-control" } })
 
-	
-	<div class="col-md-12 d-flex justify-content-end">
-		<button type="submit" class="btn btn-primary">Add Ticket</button>
-	</div>
+    </div>
+    <div class="col-md-6">
+        <label for="DeveloperId" class="form-label">Developer</label>
+        @Html.DropDownListFor(model => model.DeveloperId,
+        (IEnumerable<SelectListItem>)ViewBag.Dropdown_Developers,
+        "Select Developer",
+        new { @class = "form-control" })
+    </div>
+    <div class="col-md-6">
+        <label for="SubmitterId" class="form-label">Submitter</label>
+        @Html.DropDownListFor(model => model.SubmitterId,
+        (IEnumerable<SelectListItem>)ViewBag.Dropdown_Submitters,
+        "Select Submitter",
+        new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-6">
+        <label for="Priority" class="form-label">Priority</label>
+        @Html.DropDownListFor(model => model.Priority,
+        (IEnumerable<SelectListItem>)ViewBag.Dropdown_Priority,
+        "Select Priority",
+        new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-6">
+        <label for="Type" class="form-label">Type</label>
+        @Html.DropDownListFor(model => model.Type,
+        (IEnumerable<SelectListItem>)ViewBag.Dropdown_Type,
+        "Select Type",
+        new { @class = "form-control" })
+    </div>
+    <div class="col-md-6">
+        <label for="ProjectId" class="form-label">Project</label>
+        @Html.DropDownListFor(model => model.ProjectId,
+        (IEnumerable<SelectListItem>)ViewBag.Dropdown_Projects,
+        "Select Project",
+        new { @class = "form-control" })
+    </div>
+
+    @if(!User.IsInRole("Demo_Admin")){
+    <div class="col-md-12 d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Add Ticket</button>
+    </div>
+    }
 </form>

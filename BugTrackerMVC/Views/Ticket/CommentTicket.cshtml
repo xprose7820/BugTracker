@@ -23,9 +23,10 @@
 		@Html.EditorFor(r => r.Message, new { htmlAttributes = new { @class = "form-control" } })
 
 	</div>
-
+	@if(!User.IsInRole("Demo_Admin")){
 	<div class="col-md-12 d-flex justify-content-end">
 		<button type="submit" class="btn btn-primary">Add Comment</button>
 	</div>
+	}
 </form>
 

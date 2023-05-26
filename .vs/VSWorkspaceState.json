@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BugTracker.Data",
+    "\\BugTracker.Model",
+    "\\BugTracker.Service",
+    "\\BugTrackerMVC",
+    "\\BugTrackerMVC\\Views",
+    "\\BugTrackerMVC\\Views\\Admin",
+    "\\BugTrackerMVC\\Views\\Login",
+    "\\BugTrackerMVC\\Views\\Project",
+    "\\BugTrackerMVC\\Views\\Shared"
+  ],
+  "SelectedNode": "\\BugTrackerMVC\\Views\\Admin\\CreateProject.cshtml",
+  "PreviewInSolutionExplorer": false
+}

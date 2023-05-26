@@ -4168,11 +4168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj",
       "projectName": "BugTracker.Data",
-      "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj",
+      "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\obj\\",
+      "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",

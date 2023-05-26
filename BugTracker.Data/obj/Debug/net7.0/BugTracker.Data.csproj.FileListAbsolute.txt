@@ -10,3 +10,15 @@ C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Data\obj\Debug\net7.0\BugTrack
 C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Data\obj\Debug\net7.0\refint\BugTracker.Data.dll
 C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.pdb
 C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Data\obj\Debug\net7.0\ref\BugTracker.Data.dll
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\bin\Debug\net7.0\BugTracker.Data.deps.json
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\bin\Debug\net7.0\BugTracker.Data.dll
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\bin\Debug\net7.0\BugTracker.Data.pdb
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.AssemblyInfo.cs
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.dll
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\refint\BugTracker.Data.dll
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\BugTracker.Data.pdb
+C:\Users\alexa\Documents\BugTrackerDb\BugTracker.Data\obj\Debug\net7.0\ref\BugTracker.Data.dll

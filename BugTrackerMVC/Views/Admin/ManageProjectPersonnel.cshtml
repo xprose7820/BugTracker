@@ -28,10 +28,11 @@
 			(IEnumerable<SelectListItem>)ViewBag.Dropdown_Projects,
 			"Select Project",
 			new { @class = "form-control mb-4" })
-
+			@if(!User.IsInRole("Demo_Admin")){
 			<div class="col-md-12">
 				<button type="submit" class="btn btn-primary w-100">Add to Project</button>
 			</div>
+			}
 		</form>
 	</div>
 	<div class="container position-relative flex-grow-1" style=" margin-left: 4rem; ">

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\BugTracker.Model.csproj": {}
+    "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\BugTracker.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj": {
+    "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj",
         "projectName": "BugTracker.Data",
-        "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\BugTracker.Model.csproj": {
+    "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\BugTracker.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\BugTracker.Model.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\BugTracker.Model.csproj",
         "projectName": "BugTracker.Model",
-        "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\BugTracker.Model.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\BugTracker.Model.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,8 +101,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj": {
-                "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj"
+              "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj": {
+                "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj"
               }
             }
           }

@@ -5406,11 +5406,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTrackerMVC\\BugTrackerMVC.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTrackerMVC\\BugTrackerMVC.csproj",
       "projectName": "BugTrackerMVC",
-      "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTrackerMVC\\BugTrackerMVC.csproj",
+      "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTrackerMVC\\BugTrackerMVC.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTrackerMVC\\obj\\",
+      "outputPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTrackerMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5427,14 +5427,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Data\\BugTracker.Data.csproj"
+            "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj": {
+              "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Data\\BugTracker.Data.csproj"
             },
-            "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\BugTracker.Model.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Model\\BugTracker.Model.csproj"
+            "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\BugTracker.Model.csproj": {
+              "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Model\\BugTracker.Model.csproj"
             },
-            "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Service\\BugTracker.Service.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerMVC\\BugTracker.Service\\BugTracker.Service.csproj"
+            "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Service\\BugTracker.Service.csproj": {
+              "projectPath": "C:\\Users\\alexa\\Documents\\BugTrackerDb\\BugTracker.Service\\BugTracker.Service.csproj"
             }
           }
         }
