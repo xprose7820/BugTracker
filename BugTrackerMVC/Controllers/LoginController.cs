@@ -87,7 +87,13 @@ namespace BugTrackerMVC.Controllers
 			}
 			
         }
-        [HttpGet]
+		[HttpGet]
+		public async Task<IActionResult> DemoLogin()
+		{
+
+            return View("~/Views/Login/Demo.cshtml");
+		}
+		[HttpGet]
         // need to make button for this 
         public async Task<IActionResult> SignOut()
         {

@@ -42,7 +42,7 @@
 						</svg>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard
 					</a>
 				</li>
-				@if (roles.Contains("Admin"))
+				@if (roles.Contains("Admin") || roles.Contains("Demo_Admin"))
 				{
 					<li id="projectLi" class="nav-item mb-4 getHeaderLiItems headerLiItemsHoverEffect " onclick="toggleHover(this)">
 						<a class="nav-link text-dark  d-flex align-items-center" asp-area="" asp-controller="Project" asp-action="MyProjects">
