@@ -66,8 +66,7 @@ window.addEventListener('load', function () {
     sessionStorage.setItem('historyStack', JSON.stringify(historyStack));
     history.pushState(null, null, location.href);
 
-    let specificUrl = "http://localhost:5139/";
-
+    let specificUrl = "https://bugtrackerdb.azurewebsites.net/";
     if (window.location.href === specificUrl && !sessionStorage.getItem('justLoggedOut')) {
         console.log("The specific URL was found in the history stack.");
         fetch('/Login/SignOut', { method: 'GET' })
