@@ -1,0 +1,51 @@
+﻿@model BugTracker.Model.Login.UserCreate
+@{
+	ViewData["Title"] = "Create User";
+}
+
+<div class="mb-4 titilliumFont ">
+	<h1>Create an Account </h1>
+</div>
+@if (!string.IsNullOrEmpty(Html.ValidationSummary(true).ToString()))
+{
+	<div class="alert alert-danger pb-0">
+		@Html.ValidationSummary(true)
+	</div>
+}
+
+
+
+
+<form asp-controller="Login" asp-action="Create" method="post">
+	<div class=" mt-2 col-sm-10 mx-auto mb-1">
+
+		<input asp-for="UserName" type="text" class="pt-3 pb-3 form-control  rounded-3" id="create_username" placeholder="Enter a unique username" />
+	</div>
+	<div class=" mb-1 col-sm-10 mx-auto">
+
+		<input asp-for="Email" type="text" class="pt-3 pb-3 form-control rounded-3" id="create_email" placeholder="Enter your email" />
+
+	</div>
+	<div class=" mb-1 col-sm-10 mx-auto">
+
+		<input asp-for="Password" type="password" class="pt-3 pb-3 form-control  rounded-3" id="create_password" placeholder="Enter a password" />
+
+	</div>
+	<div class=" mb-1 col-sm-10 mx-auto">
+
+		<input asp-for="VerifyPassword" type="password" class="pt-3 pb-3 form-control  rounded-3" id="create_verify_password" placeholder="Verify password" />
+		
+
+
+	</div>
+	<div class="col-sm-3 mx-auto">
+		<button type="submit" class=" btn btn-primary mt-2 mb-4 rounded-5 w-100 pt-3 pb-3 ">SUBMIT </button>
+	</div>
+
+
+
+
+
+</form>
+
+<a class="removeUnderline " asp-controller="Login" asp-action="Index">Back to Login</a>

@@ -1,0 +1,17 @@
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Service.deps.json
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Service.dll
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Service.pdb
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Data.dll
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Model.dll
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Data.pdb
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\bin\Debug\net7.0\BugTracker.Model.pdb
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.AssemblyInfo.cs
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.csproj.CopyComplete
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.dll
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\refint\BugTracker.Service.dll
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\BugTracker.Service.pdb
+C:\Users\alexa\Documents\BugTrackerMVC\BugTracker.Service\obj\Debug\net7.0\ref\BugTracker.Service.dll

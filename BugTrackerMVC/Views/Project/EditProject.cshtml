@@ -1,0 +1,41 @@
+﻿@model BugTracker.Model.Project.ProjectEdit;
+@{
+	ViewData["Title"] = "Edit Project";
+}
+<form asp-controller="Project" asp-action="EditProject" method="post" id="customForm_TableEdit" class="row g-4 ms-5 mt-5 ps-3 pe-3 pb-4" style="background-color: white; width: 95vh;">
+	@Html.HiddenFor(model => model.Id)
+	<div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
+		<div class="card-body">
+			<div class="mb-0" style="font-weight: bolder;">
+				<h2 class="card-title">Editing Project: @Model.Title </h2>
+			</div>
+			@if (User.IsInRole("Admin"))
+			{
+				<p class="mb-0">
+					@Html.ActionLink("Back to List", "MyProjects", "Project", null, new { @class = "text-white" })
+				</p>
+			}
+			@if (User.IsInRole("Project_Manager"))
+			{
+				<p class="mb-0">
+					@Html.ActionLink("Back to Project", "ManageMyProject_ProjectManager", "Project", null, new { @class = "text-white" })
+				</p>
+			}
+		</div>
+	</div>
+	<div class="col-md-6">
+		<label for="Title" class="form-label">Title</label>
+		@Html.EditorFor(r => r.Title, new { htmlAttributes = new { @class = "form-control" } })
+
+	</div>
+	<div class="col-md-6">
+
+		<label for="Description" class="form-label">Description</label>
+		@Html.EditorFor(r => r.Description, new { htmlAttributes = new { @class = "form-control" } })
+
+	</div>
+
+	<div class="col-md-12 d-flex justify-content-end">
+		<button type="submit" class="btn btn-primary">Update Ticket</button>
+	</div>
+</form>

@@ -1,0 +1,279 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container mt-5">
+	<div class="row mb-4">
+		@if (!User.IsInRole("Developer"))
+		{
+			<div class="col-md-4 mb-3 d-flex justify-content-center align-items-center" style="">
+				<div class="mb-3  d-flex justify-content-center align-items-center flex-column" style=" color: white;height: 25vh; border-radius: 1.5rem; width: 30vh;   background: linear-gradient(to left, #ffb3ff 10%, #e600e6 100%);">
+					<p class="mb-0" style="font-size: 2.5rem;">@ViewBag.NumOfProjects</p>
+					<p>Total Projects</p>
+				</div>
+			</div>
+			<div class="col-md-4 mb-3 d-flex justify-content-center align-items-center" style="">
+				<div class="mb-3  d-flex justify-content-center align-items-center flex-column" style="color: white;height: 25vh;border-radius: 1.5rem;width: 30vh;   background: linear-gradient(to right, #ffb3ff , #3366ff 100%);">
+					<p class="mb-0" style="font-size: 2.5rem;">@ViewBag.NumOfTickets</p>
+					<p>Total Tickets</p>
+				</div>
+			</div>
+			<div class="col-md-4 mb-3 d-flex justify-content-center align-items-center" style="">
+				<div class="mb-3 d-flex justify-content-center align-items-center flex-column" style="color: white;height: 25vh;border-radius: 1.5rem;width: 30vh;   background: linear-gradient(to left,  #000099 10%, #3366ff 100%);">
+					<p class="mb-0" style="font-size: 2.5rem;">@ViewBag.NumOfUsers</p>
+					<p>Active Users</p>
+				</div>
+			</div>
+		}
+		@if (User.IsInRole("Developer"))
+		{
+			<div class="col-md-6 mb-3 d-flex justify-content-center align-items-center" style="">
+				<div class="mb-3  d-flex justify-content-center align-items-center flex-column" style="color: white;height: 25vh;border-radius: 1.5rem;width: 30vh;   background: linear-gradient(to right, #ffb3ff , #3366ff 100%);">
+					<p class="mb-0" style="font-size: 2.5rem;">@ViewBag.NumOfTickets</p>
+					<p>Total Tickets</p>
+				</div>
+			</div>
+			<div class="col-md-6 mb-3 d-flex justify-content-center align-items-center" style="">
+				<div class="mb-3 d-flex justify-content-center align-items-center flex-column" style="color: white;height: 25vh;border-radius: 1.5rem;width: 30vh;   background: linear-gradient(to left,  #000099 10%, #3366ff 100%);">
+					<p class="mb-0" style="font-size: 2.5rem;">@ViewBag.NumOfUsers</p>
+					<p>Active Users</p>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="row">
+		<div class="col-md-4 ">
+			<div class=" barChartCustom w-100 infoCard_border " style="box-shadow: 0rem 0rem 1.5rem .05rem rgba(230, 0, 230,.3);">
+				<canvas id="ticketByStatus"></canvas>
+				<div class="info-card" style="background-color: #f8f9fa; padding: 10px; margin-bottom: 10px;">
+					<p class="mb-0">Tickets by Status</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4  " style="">
+			<div class=" barChartCustom w-100 infoCard_border" style="box-shadow: 0rem 0rem 1.5rem .05rem rgba(51, 102, 255,.3);">
+				<canvas id="ticketByType"></canvas>
+				<div class="info-card " style="background-color: #f8f9fa; padding: 10px; margin-bottom: 10px;">
+					<p class="mb-0">Tickets by Type</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 ">
+			<div class=" barChartCustom w-100 infoCard_border" style="box-shadow: 0rem 0rem 1.5rem .05rem rgba(0, 0, 153,.3);">
+				<canvas id="ticketByPriority"></canvas>
+				<div class="info-card" style="background-color: #f8f9fa; padding: 10px; margin-bottom: 10px;">
+					<p class="mb-0">Tickets by Priority</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+	var ctx_Status = document.getElementById('ticketByStatus').getContext('2d');
+	var ticketByStatus = new Chart(ctx_Status, {
+		type: 'bar',
+		data: {
+
+
+			labels: @Html.Raw(ViewBag.StatusLabels), // replace these with your x-axis values
+			datasets: [{
+				label: '# of Tickets', // replace this with your own label
+				data: @Html.Raw(ViewBag.StatusData), // replace these with your y-axis values
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.4)',
+					'rgba(54, 162, 235, 0.4)',
+					'rgba(255, 206, 86, 0.4)',
+					'rgba(75, 192, 192, 0.4)',
+					'rgba(153, 102, 255, 0.4)',
+					'rgba(255, 159, 64, 0.4)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			responsive: true,
+			plugins: {
+				legend: {
+					display: false
+				}
+			},
+
+			scales: {
+				//x:{
+				//	ticks:{
+				//		font:{
+				//			size: 10
+				//		}
+				//	}
+
+				//},
+				x: {
+					ticks: {
+						color: 'black'
+					},
+					grid: {
+						drawOnChartArea: false,
+						//},
+						//ticks: {
+						//	display: true
+						//}
+					}
+				},
+				y: {
+					beginAtZero: true,
+					ticks: {
+						// Include a callback to ensure only integers are displayed
+						callback: function (value) {
+							if (value % 1 === 0) {
+								return value;
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+	var ctx_Type = document.getElementById('ticketByType').getContext('2d');
+	var ticketByType = new Chart(ctx_Type, {
+		type: 'bar',
+		data: {
+
+
+			labels: @Html.Raw(ViewBag.TypeLabels), // replace these with your x-axis values
+			datasets: [{
+				label: '# of Tickets', // replace this with your own label
+				data: @Html.Raw(ViewBag.TypeData), // replace these with your y-axis values
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.4)',
+					'rgba(54, 162, 235, 0.4)',
+					'rgba(255, 206, 86, 0.4)',
+					'rgba(75, 192, 192, 0.4)',
+					'rgba(153, 102, 255, 0.4)',
+					'rgba(255, 159, 64, 0.4'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			responsive: true,
+			plugins: {
+				legend: {
+					display: false
+				}
+			},
+
+			scales: {
+				x: {
+					ticks: {
+						color: 'black'
+					},
+					grid: {
+						drawOnChartArea: false,
+						//},
+						//ticks: {
+						//	display: true
+						//}
+					}
+				},
+				y: {
+					beginAtZero: true,
+					ticks: {
+						// Include a callback to ensure only integers are displayed
+						callback: function (value) {
+							if (value % 1 === 0) {
+								return value;
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+
+	var ctx_Priority = document.getElementById('ticketByPriority').getContext('2d');
+	var ticketByPriority = new Chart(ctx_Priority, {
+		type: 'bar',
+		data: {
+
+
+			labels: @Html.Raw(ViewBag.PriorityLabels), // replace these with your x-axis values
+			datasets: [{
+				label: '# of Tickets', // replace this with your own label
+				data: @Html.Raw(ViewBag.PriorityData), // replace these with your y-axis values
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.4)',
+					'rgba(54, 162, 235, 0.4)',
+					'rgba(255, 206, 86, 0.4)',
+					'rgba(75, 192, 192, 0.4)',
+					'rgba(153, 102, 255, 0.4)',
+					'rgba(255, 159, 64, 0.4)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			plugins: {
+				legend: {
+					display: false
+				}
+			},
+			responsive: true,
+			scales: {
+				x: {
+					ticks: {
+						color: 'black'
+					},
+					grid: {
+						drawOnChartArea: false,
+						//},
+						//ticks: {
+						//	display: true
+						//}
+					}
+				},
+				y: {
+					beginAtZero: true,
+					ticks: {
+						// Include a callback to ensure only integers are displayed
+						callback: function (value) {
+							if (value % 1 === 0) {
+								return value;
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+
+</script>

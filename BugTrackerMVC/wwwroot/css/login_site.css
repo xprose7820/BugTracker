@@ -1,0 +1,39 @@
+﻿body {
+    
+    background-image: url('../images/5562006.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#formContainer {
+    background: white;
+    border-radius: 1.5rem;
+    /*    border: 1px solid red;*/
+    margin-top: 8rem;
+    width: 60vh;
+    height: auto;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
+}
+.titilliumFontBold h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+}
+.titilliumFont {
+    font-family: 'Titillium Web', sans-serif;
+   
+}
+.removeUnderline {
+    text-decoration: none;
+    
+    padding: .15rem .6rem;
+    border-radius: 1.5rem;
+    background-color: grey;
+    color: white;
+    font-size: 1rem;
+}
+.removeUnderline:hover{
+    color: lightgrey;
+}
+.customErrorMessage{
+    background-color: palevioletred;
+}

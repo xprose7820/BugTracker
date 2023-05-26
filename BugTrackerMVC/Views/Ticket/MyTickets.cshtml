@@ -1,0 +1,94 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common;
+@{
+	ViewData["Title"] = "My Tickets";
+}
+<div class="ms-4" style="margin-top: 1.6rem; margin-bottom: 2rem;">
+	<a id="createATags" asp-controller="Ticket" asp-action="CreateTicket" method="get">Create New Ticket</a>
+</div>
+<div id="customForm_TableEdit" class="ps-4 pe-4 ms-4 me-4" style="background-color: white;">
+	<div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
+		<div class="card-body">
+			<div class="mb-0" style="font-weight: bolder;">
+				<h2 class="card-title">My Tickets</h2>
+				
+			</div>
+			<p class="mb-0">All tickets inside the database</p>
+			
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Ticket Title
+				<th>
+					Description
+				</th>
+				<th>
+					Designated Project
+				</th>
+				<th>
+					Priority
+				</th>
+				<th>
+					Status
+				</th>
+				<th>
+					Actions
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (var ticket in ViewBag.TicketDetails)
+			{
+				<tr>
+					<td>
+						@ticket.Title
+					</td>
+					<td>
+						@ticket.Description
+					</td>
+					<td>
+						@ticket.ProjectName
+					</td>
+					<td>
+						@ticket.Priority
+					</td>
+					<td>
+						@ticket.Status
+					</td>
+					<td>
+						<div class="mb-0">
+							@Html.ActionLink("Edit", "EditTicket", "Ticket", new { id = ticket.Id }, new { @class = "actionLinkCustom" })
+						</div>
+						<div class="mb-0">
+							@Html.ActionLink("Details", "DetailTicket", "Ticket", new { id = ticket.Id }, new { @class = "actionLinkCustom" })
+						</div>
+						<div class="mb-0 pb-0">
+							@Html.ActionLink("Add Comment", "CommentTicket", "Ticket", new { id = ticket.Id }, new { @class = "actionLinkCustom" })
+						</div>
+					</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+	<div class="d-flex justify-content-end me-5">
+		@Html.PagedListPager((IPagedList)ViewBag.TicketDetails, page => Url.Action("MyTickets", new {  myTicketPage = page }),
+		new PagedListRenderOptions
+		{
+		DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+		DisplayLinkToLastPage = PagedListDisplayMode.Never,
+		DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded,
+		DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,
+		LinkToPreviousPageFormat = "&nbsp;&nbsp;Previous&nbsp;&nbsp;",
+		LinkToNextPageFormat ="&nbsp;&nbsp;Next&nbsp;&nbsp;",
+		MaximumPageNumbersToDisplay = 1,
+		EllipsesFormat = "",
+		DisplayEllipsesWhenNotShowingAllPageNumbers = false
+		})
+	</div>
+</div>

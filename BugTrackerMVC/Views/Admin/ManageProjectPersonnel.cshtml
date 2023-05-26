@@ -1,0 +1,106 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common;
+@model BugTracker.Model.Project.ProjectUserEdit
+@{
+	ViewData["Title"] = "Manage Project Personnel";
+}
+
+
+<div class="mt-5">
+	<h2>Manage Project Personnel</h2>
+</div>
+<div class="d-flex flex-row mt-5">
+
+	<div class="flex-grow-2 me-1 mt-5" style=" width: 30%;">
+		
+		<form asp-controller="Project" asp-action="ManageProjectPersonnel" method="post">
+			<label style="font-size: 1.25rem;" class="mb-2" for="UserId">Select a User</label>
+			@Html.DropDownListFor(model => model.UserId,
+			(IEnumerable<SelectListItem>)ViewBag.Dropdown_Users,
+			"Select User",
+			new { @class = "form-control" })
+
+			<hr style="margin-top: 3rem;margin-bottom: 2rem;" />
+
+			<label style="font-size: 1.25rem;" class="mb-2" for="RoleId">Select a Project to assign</label>
+			@Html.DropDownListFor(model => model.ProjectId,
+			(IEnumerable<SelectListItem>)ViewBag.Dropdown_Projects,
+			"Select Project",
+			new { @class = "form-control mb-4" })
+
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-primary w-100">Add to Project</button>
+			</div>
+		</form>
+	</div>
+	<div class="container position-relative flex-grow-1" style=" margin-left: 4rem; ">
+
+		<div id="manageUserRolesCard_customEdit" class="card position-absolute mt-3" style="z-index: 1; width: 95%;        left: 0; right: 0; margin: auto;">
+			<div class="card-body">
+				<div class="mb-0" style="font-weight: bolder;">
+					<h2 class="card-title">User-Project Assignments</h2>
+				</div>
+				<p class="mb-0">Display of Users and their associated Projects</p>
+
+
+			</div>
+		</div>
+
+		<div id="manageUserRolesTable_customEdit" class=" table-responsive ps-4 pe-4 " style=" margin-top: 3rem;padding-top: 5rem; background-color: white;">
+			<table class="table w-100">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Role</th>
+						<th>Project(s)</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var user in ViewBag.Users)
+					{
+						<tr>
+							<td>@user.UserName</td>
+							<td>@user.Role</td>
+							<td>
+								@if (user.Projects != null && user.Projects.Count > 0)
+								{
+									@foreach (var project in user.Projects)
+									{
+										<p class="mb-0">@project.Title</p>
+									}
+
+								}
+								else
+								{
+									<p class="mb-0">N/A</p>
+								}
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+			<div class="d-flex justify-content-end me-5">
+				@Html.PagedListPager((IPagedList)ViewBag.Users, page => Url.Action("ManageProjectPersonnel", new {  projectPage = page }),
+				new PagedListRenderOptions
+				{
+				DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+				DisplayLinkToLastPage = PagedListDisplayMode.Never,
+				DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded,
+				DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,
+				LinkToPreviousPageFormat = "&nbsp;&nbsp;Previous&nbsp;&nbsp;",
+				LinkToNextPageFormat ="&nbsp;&nbsp;Next&nbsp;&nbsp;",
+				MaximumPageNumbersToDisplay = 1,
+				EllipsesFormat = "",
+				DisplayEllipsesWhenNotShowingAllPageNumbers = false
+				})
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+

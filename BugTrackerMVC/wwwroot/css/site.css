@@ -1,0 +1,236 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #F1F1F1;
+}
+
+.titilliumFont {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+
+
+/* Views/Login/Index edits */
+
+
+
+
+
+
+
+
+
+
+#mainBodyDebug {
+    /*    border: 1px solid red;*/
+}
+
+#headerDebug {
+    /*    border: 1px solid blue;*/
+}
+
+header {
+    border-left: .1rem solid rgba(249,249,249,.1);
+    box-shadow: 0rem -.8rem 1.5rem .2rem rgba(0, 0, 0, 0.4);
+}
+
+.sidebarContainer {
+    position: fixed;
+    left: 0%;
+    height: 100vh;
+    width: 300px;
+    /*    border: 1px solid green;*/
+    box-shadow: 0px 0 16px 3px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+.containerNextToSidebar {
+    margin-left: 300px;
+}
+/*.sidebarContainer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 4px 0 4px 2px rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}*/
+
+#efImageEditLogo {
+    height: 5rem;
+    width: auto;
+    margin-top: 1rem;
+    margin-left: .5rem;
+    /*    border: 1px solid red;*/
+}
+
+#image-and-hello {
+    display: flex;
+    /*    border: 1px solid blue;*/
+    justify-content: flex-start;
+}
+
+#helloDebug {
+    margin-top: 1.4rem;
+    margin-left: 1rem;
+    /*    border: 1px solid green;*/
+    font-size: 1.1rem;
+    font-weight: lighter;
+    line-height: 1.8rem;
+}
+
+.headerLiItemsHoverEffect:hover {
+    background-color: #EEEEEE;
+    width: 94.5%;
+    border-radius: .5rem;
+}
+
+.toggleHoverCSS {
+    background: linear-gradient(to left, #FF95F8 10%, #FF4DF3 100%);
+    width: 94.5%;
+    border-radius: .5rem;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    box-shadow: 0 .2rem .5rem .1rem rgba(255, 158, 248, 1);
+}
+
+
+
+
+
+
+
+
+
+#manageUserRolesCard_customEdit {
+    background: linear-gradient(to right, #00ccff 10%, #99ebff 100%);
+    color: white;
+    border: none;
+    border-radius: .6rem;
+    box-shadow: 0 0 .5rem .05rem rgba(0, 0, 0, .2);
+}
+
+#manageUserRolesTable_customEdit {
+    border-radius: .25rem;
+    box-shadow: 0 0 .8rem .1rem rgba(0, 0, 0, .2);
+}
+
+
+
+
+.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pagination a:first-child, .pagination a:last-child {
+    color: white;
+    font-weight: lighter;
+    text-decoration: none;
+    background-color: rgba(255, 153, 255,.5);
+    border-radius: .3rem;
+    padding: .1rem .1rem;
+}
+
+    .pagination a:first-child:hover, .pagination a:last-child:hover {
+        background-color: rgba(255, 0, 255,.7); /* increase opacity for hover effect */
+        color: white; /* change text color on hover */
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+.pagination a:first-child {
+    margin-right: .4rem;
+}
+
+.pagination a:last-child {
+    margin-left: .4rem;
+}
+
+#customForm_TableEdit {
+    border-radius: .5rem;
+    box-shadow: 0rem 0.3rem 1rem .25rem rgba(0,0,0,.3);
+}
+
+
+
+
+
+
+
+
+
+#createATags {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 0, 255,.5);
+    padding: .4rem 1.1rem;
+    border-radius: .4rem;
+}
+
+    #createATags:hover {
+        background-color: rgba(255, 0, 255,.7); /* increase opacity for hover effect */
+        color: white; /* change text color on hover */
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+
+.actionLinkCustom {
+    text-decoration: none;
+    background-color: rgba(253, 110, 254,.8);
+    color: white;
+    border-radius: .2rem;
+    padding: 0rem .3rem;
+    font-size: .9rem;
+}
+
+    .actionLinkCustom:hover {
+        background-color: rgba(255, 0, 255,.7); /* increase opacity for hover effect */
+        color: white; /* change text color on hover */
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+
+
+#ticketByStatus, #ticketByType, #ticketByPriority {
+    background-color: lightgrey;
+    font-weight: bold;
+    padding: .8rem 1.1rem .6rem 1.1rem;
+}
+
+.barChartCustom {
+    /*        border: 1px solid red;*/
+    font-size: 1.5rem;
+    
+ 
+}
+
+.infoCard_border {
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    overflow:hidden;
+  
+}
+

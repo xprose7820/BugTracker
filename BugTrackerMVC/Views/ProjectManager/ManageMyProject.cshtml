@@ -1,0 +1,76 @@
+﻿@model BugTracker.Model.Project.ProjectDetail
+@{
+	ViewData["Titel"] = "Manage My Project";
+}
+
+
+<div class="d-flex flex-column mt-5">
+
+	<div class="info-display" style="background-color:white; border-radius: .7rem; height: 20vh;">
+		<!-- Insert your information here -->
+		<p>Your informative text goes here...</p>
+	</div>
+
+	<div class="d-flex flex-row mt-5">
+		<div class="flex-grow-1 ms-0 me-3">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Title</th>
+						
+						<th>Developer</th>
+						<th>Submitter</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					@foreach (var ticket in ViewBag.Tickets)
+					{
+						<tr>
+							<td>@ticket.Title</td>
+							
+							<td>@ticket.DeveloperName</td>
+
+							<td>
+								@ticket.SubmitterName
+							</td>
+							<td>
+								@ticket.Status
+							</td>
+							<td>Details</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+		<div class="flex-grow-2 ms-3">
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Role</th>
+						<th>Email</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var user in ViewBag.Users)
+					{
+						<tr>
+							<td>@user.UserName</td>
+							<td>@user.Role</td>
+
+							<td>
+								@user.Email
+							</td>
+							
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

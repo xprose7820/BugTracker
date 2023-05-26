@@ -1,0 +1,221 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+
+@model BugTracker.Model.Ticket.TicketDetail
+@{
+	ViewData["Title"] = "Ticket Details";
+}
+
+
+
+
+<div  class="d-flex flex-column ms-4" style="margin-top: 3.1rem; width: 95%;">
+
+	<div id="customForm_TableEdit" class="info-display pt-0" style="background-color:white; border-radius: .7rem; ">
+		<div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.9rem;">
+			<div class="card-body">
+				<div class="mb-0" style="font-weight: bolder;">
+					<h2 class="card-title">Details For Ticket: {@Model.Title} </h2>
+				</div>
+				<p class="mb-0">
+					@Html.ActionLink("Back to List", "MyTickets", "Ticket", null, new { @class = "text-white" }) |
+					@Html.ActionLink("Edit Ticket", "EditTicket", "Ticket", new { id = Model.Id }, new { @class = "text-white" })
+				</p>
+			</div>
+		</div>
+		<div class="row justify-content-center ">
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Ticket Title</p>
+				<p class="mb-0">@Model.Title</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Description</p>
+				<p class="mb-0 text">@Model.Description</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Assigned Developer</p>
+				<p class="mb-0"> @Model.DeveloperName</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;"> Submitter</p>
+				<p class="mb-0">@Model.SubmitterName</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Type</p>
+				<p class="mb-0">@Model.Type</p>
+			</div>
+		</div>
+
+
+
+		<hr class="mt-0 mt-2 mb-2 mx-3">
+
+		<div class="row justify-content-center ">
+
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Status</p>
+				<p class="mb-3">@Model.Status</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Priority</p>
+				<p class="mb-3">@Model.Priority</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Designated Project</p>
+				<p class="mb-3">@Model.ProjecName</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Created</p>
+				<p class="mb-3">@Model.CreatedDate</p>
+			</div>
+			<div class="col-md-2">
+				<p class="mb-0" style="font-weight: bold;">Updated</p>
+				<p class="mb-3">@Model.UpdatedDate</p>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div  class="d-flex flex-row " style="margin-top: 2.2rem;">
+		<div id="customForm_TableEdit" class="flex-grow-2 ms-0 me-3  ps-3 pe-3" style="background-color: white;border-radius: .7rem;">
+
+			<div id="manageUserRolesCard_customEdit" class="card d-flex flex-column " style=" width: 97.5%; left: 0; right: 0; margin: auto; top: -1rem; ">
+				<div class="card-body">
+
+					<h2 class="card-title ">Comments</h2>
+
+				</div>
+			</div>
+
+			<table class="table ">
+				<thead>
+					<tr>
+						<th>Commenter</th>
+						<th>Message</th>
+						<th>Created</th>
+						<!-- more headers as needed -->
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var comment in Model.TicketComments)
+					{
+						<tr>
+							<td>@comment.Commenter.UserName</td>
+							<td>@comment.Message</td>
+							<td>@comment.CreatedDate</td>
+
+							<!-- more data as needed -->
+						</tr>
+					}
+					<!-- more rows as needed -->
+				</tbody>
+			</table>
+			<div class="d-flex justify-content-end me-5">
+				@Html.PagedListPager((IPagedList)Model.TicketComments, page => Url.Action("DetailTicket", new { id = Model.Id, commentPage = page }),
+				new PagedListRenderOptions
+				{
+				DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+				DisplayLinkToLastPage = PagedListDisplayMode.Never,
+				DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded,
+				DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,
+				LinkToPreviousPageFormat = "&nbsp;&nbsp;Previous&nbsp;&nbsp;",
+				LinkToNextPageFormat ="&nbsp;&nbsp;Next&nbsp;&nbsp;",
+				MaximumPageNumbersToDisplay = 1,
+				EllipsesFormat = "",
+				DisplayEllipsesWhenNotShowingAllPageNumbers = false
+				})
+			</div>
+
+
+		</div>
+		<div id="customForm_TableEdit"  class="flex-grow-1 ms-3 ps-3 pe-3" style="background-color: white;border-radius: .7rem;">
+			<div id="manageUserRolesCard_customEdit" class="card " style=" width: 97.5%; left: 0; right: 0; margin: auto; top: -1rem;">
+				<div class="card-body">
+					<div class="mb-0" style="font-weight: bolder;">
+						<h2 class="card-title">History</h2>
+					</div>
+
+				</div>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Property Changed</th>
+						<th>Previous Value</th>
+						<th>New Value</th>
+						<th>Date Changed</th>
+						<!-- more headers as needed -->
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var history in Model.TicketHistories)
+					{
+						<tr>
+							<td>@history.Property</td>
+							<td>@history.OldValue</td>
+							<td>@history.NewValue</td>
+							<td>@history.ChangedDate</td>
+							<!-- more data as needed -->
+						</tr>
+					}
+					<!-- more rows as needed -->
+				</tbody>
+			</table>
+			<div class="d-flex justify-content-end me-5">
+				@Html.PagedListPager((IPagedList)Model.TicketHistories, page => Url.Action("DetailTicket", new { id = Model.Id, historyPage = page }),
+				new PagedListRenderOptions
+				{
+				DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+				DisplayLinkToLastPage = PagedListDisplayMode.Never,
+				DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded,
+				DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,
+				LinkToPreviousPageFormat = "&nbsp;&nbsp;Previous&nbsp;&nbsp;",
+				LinkToNextPageFormat ="&nbsp;&nbsp;Next&nbsp;&nbsp;",
+				MaximumPageNumbersToDisplay = 1,
+				EllipsesFormat = "",
+				DisplayEllipsesWhenNotShowingAllPageNumbers = false
+				})
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@using X.PagedList;
+
+@{
+	ViewData["Title"] = "My Projects";
+}
+<div class="ms-4" style="margin-top: 1.6rem; margin-bottom: 2rem;">
+	<a id="createATags"asp-controller="Project" asp-action="CreateProject">Create New Project</a>
+</div>
+<div id="customForm_TableEdit" class="ps-4 pe-4 ms-4 me-4" style="background-color: white;">
+	<div id="manageUserRolesCard_customEdit" class="card " style=" width: 95%; left: 0; right: 0; margin: auto; top: -.8rem;">
+		<div class="card-body">
+			<div class="mb-0" style="font-weight: bolder;">
+				<h2 class="card-title">My Projects</h2>
+
+			</div>
+			<p class="mb-0">List of all your Projects inside the database</p>
+
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Project Title
+				</th>
+				<th>
+					Description
+				</th>
+				<th>
+					Assigned Manager
+				</th>
+				<th>
+					Actions
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (var project in ViewBag.Projects)
+			{
+				<tr>
+					<td>
+						@project.Title
+					</td>
+					<td>
+						@project.Description
+					</td>
+					<td>
+						@project.AssignedManager
+					</td>
+					<td>
+						<div>
+							@Html.ActionLink("Edit", "EditProject", "Project", new { id = project.Id }, new { @class = "actionLinkCustom" })
+						</div>
+						<div>
+							@Html.ActionLink("Details", "DetailProject", "Project", new { id = project.Id }, new { @class = "actionLinkCustom" })
+						</div>
+						
+						@*<div class="mb-0 pb-0">
+							@Html.ActionLink("Manage Personnel", "ManageProjectPersonnel", "Project", null , new { @class = "actionLinkCustom" })
+						</div>*@
+					</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+	<div class="d-flex justify-content-end me-5">
+		@Html.PagedListPager((IPagedList)ViewBag.Projects, page => Url.Action("MyProjects", new {  projectPage = page }),
+		new PagedListRenderOptions
+		{
+		DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+		DisplayLinkToLastPage = PagedListDisplayMode.Never,
+		DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded,
+		DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,
+		LinkToPreviousPageFormat = "&nbsp;&nbsp;Previous&nbsp;&nbsp;",
+		LinkToNextPageFormat ="&nbsp;&nbsp;Next&nbsp;&nbsp;",
+		MaximumPageNumbersToDisplay = 1,
+		EllipsesFormat = "",
+		DisplayEllipsesWhenNotShowingAllPageNumbers = false
+		})
+	</div>
+
+
+</div>
