@@ -136,7 +136,7 @@ namespace BugTrackerMVC.Controllers
 			bool isEdited = await _ticketService.EditTicketAsync(id, detail);
 			if (isEdited)
 			{
-				if (User.IsInRole("Admin"))
+				if (User.IsInRole("Admin") || User.IsInRole("Demo_Admin"))
 				{
 					//for admin view 
 					return RedirectToAction("MyTickets", "Ticket");
@@ -178,7 +178,7 @@ namespace BugTrackerMVC.Controllers
 			bool isCreated = await _ticketService.CommentTicketAsync(detail);
 			if (isCreated)
 			{
-				if (User.IsInRole("Admin"))
+				if (User.IsInRole("Admin") || User.IsInRole("Demo_Admin"))
 				{
 					//for admin view 
 					return RedirectToAction("MyTickets", "Ticket");

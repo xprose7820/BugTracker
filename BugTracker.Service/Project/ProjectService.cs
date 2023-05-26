@@ -405,7 +405,7 @@ namespace BugTracker.Service.Project
 			int num = 0;
 
 
-			if (roles[0] == "Admin")
+			if (roles[0] == "Admin" || roles[0] == "Demo_Admin")
 			{
 				num = _context.Projects.Where(g => g.AdminId == _userId).Count();
 			}

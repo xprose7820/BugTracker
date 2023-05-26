@@ -45,11 +45,11 @@ namespace BugTracker.Service.Ticket
 		{
 			var user = await _userManager.FindByIdAsync(_userId.ToString());
 			var roles = await _userManager.GetRolesAsync(user);
-			if (roles[0] == "Admin" || roles[0] == "Project_Manager")
+			if (roles[0] == "Admin" || roles[0] == "Project_Manager" || roles[0] == "Demo_Admin")
 			{
 				List<ProjectEntity> projects = new List<ProjectEntity>();
 
-				if (roles[0] == "Admin")
+				if (roles[0] == "Admin" || roles[0] == "Demo_Admin")
 				{
 					projects = await _context.Projects
 						.Include(entity => entity.Tickets)
@@ -118,10 +118,10 @@ namespace BugTracker.Service.Ticket
 			// why do we need theninclude if not virtual?
 			var user = await _userManager.FindByIdAsync(_userId.ToString());
 			var roles = await _userManager.GetRolesAsync(user);
-			if (roles[0] == "Admin" || roles[0] == "Project_Manager")
+			if (roles[0] == "Admin" || roles[0] == "Project_Manager" || roles[0] == "Demo_Admin")
 			{
 				List<ProjectEntity> projects = new List<ProjectEntity>();
-				if (roles[0] == "Admin")
+				if (roles[0] == "Admin" || roles[0] == "Demo_Admin")
 				{
 					projects = await _context.Projects
 						.Include(entity => entity.Tickets)
