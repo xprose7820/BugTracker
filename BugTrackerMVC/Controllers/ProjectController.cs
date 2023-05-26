@@ -99,7 +99,7 @@ namespace BugTrackerMVC.Controllers
 			bool isEdited = await _service.EditProjectAsync(model);
 			if (isEdited)
 			{
-				if (User.IsInRole("Admin") || User.IsInRole("Demo_Admin")
+				if (User.IsInRole("Admin") || User.IsInRole("Demo_Admin"))
 				{
 					return RedirectToAction("MyProjects", "Project");
 
